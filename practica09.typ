@@ -21,7 +21,7 @@
 )
 
 // Espacio más pequeño entre logos y texto principal
-#v(0.5cm)
+//#v(4pt)
 
 // === Contenido central (centrado visualmente en la página) ===
 #block[
@@ -65,6 +65,43 @@
   #v(0.2cm)
   #text(12pt, weight: "bold")[04 - 11 - 2025]
 ]
+
+// === CONFIGURACIÓN GENERAL DEL DOCUMENTO ===
+#set page(
+  paper: "us-letter",
+  margin: 2.5cm,
+)
+
+#set text(
+  font: "Helvetica Neue",
+  size: 11pt,
+  line-spacing: 1.4em,
+  justify: true,
+)
+
+#set align(left)
+
+// === Encabezados ===
+#set heading(numbering: "1.1.a")
+
+#show heading.where(level: 1): set text(size: 13pt, weight: "bold")
+#show heading.where(level: 2): set text(size: 12pt, weight: "semibold")
+#show heading.where(level: 3): set text(size: 11pt, weight: "medium")
+
+// === Listas ===
+//#show list.item: set text(leading: 1.3em)
+
+// === Bloques de código ===
+#show raw: block[
+  fill: luma(240), // gris claro de fondo
+  inset: 0.4em,
+  radius: 4pt,
+  stroke: none,
+  text(font: "Menlo", size: 9pt),
+]
+
+// === Párrafos y separación ===
+#show par: set par(spacing: 0.5em)
 
 = Directivas Dinámicas <directivas-dinámicas>
 == Assert <assert>
